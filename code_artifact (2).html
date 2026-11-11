@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高美惠 | 個人網頁</title>
+    <!-- 引入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入 Google Fonts: Noto Sans TC -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- 引入 FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans TC"', 'sans-serif'],
+                    },
+                    animation: {
+                        'gradient-x': 'gradient-x 10s ease infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        'gradient-x': {
+                            '0%, 100%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'left center'
+                            },
+                            '50%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'right center'
+                            },
+                        },
+                        'float': {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        /* 自定義捲軸 */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex items-center justify-center p-4 sm:p-8 bg-gradient-to-br from-pink-400 via-orange-300 to-purple-400 animate-gradient-x relative overflow-hidden">
+    
+    <!-- 裝飾性背景光暈 -->
+    <div class="absolute top-10 left-10 w-72 h-72 bg-yellow-300 rounded-full mix-blend-overlay filter blur-3xl opacity-60 animate-float"></div>
+    <div class="absolute bottom-10 right-10 w-96 h-96 bg-pink-500 rounded-full mix-blend-overlay filter blur-3xl opacity-60 animate-float" style="animation-delay: 2s;"></div>
+
+    <!-- 內容卡片 (毛玻璃效果) -->
+    <div class="relative w-full max-w-sm backdrop-blur-xl bg-white/70 border border-white/40 shadow-2xl rounded-3xl p-8 text-center transform transition-all hover:scale-[1.02] duration-300">
+        
+        <!-- 個人照片區塊 (外加漸層光環) -->
+        <div class="relative w-32 h-32 mx-auto mb-6">
+            <div class="absolute inset-0 bg-gradient-to-tr from-pink-500 to-yellow-400 rounded-full animate-spin" style="animation-duration: 4s;"></div>
+            <!-- 請將 src 替換為您的真實照片網址 -->
+            <img 
+                src="https://placehold.co/400x400/ffb6c1/ffffff?text=Photo" 
+                alt="高美惠的個人照片" 
+                class="absolute inset-[3px] w-[calc(100%-6px)] h-[calc(100%-6px)] object-cover rounded-full border-2 border-white bg-white z-10"
+            >
+        </div>
+
+        <!-- 基本資訊 -->
+        <h1 class="text-3xl font-bold text-slate-800 tracking-wide mb-1 bg-clip-text text-transparent bg-gradient-to-r from-pink-600 to-purple-600">
+            高美惠
+        </h1>
+        <h2 class="text-sm font-medium text-slate-600 mb-5">
+            <i class="fa-solid fa-graduation-cap mr-1 text-pink-500"></i>黎明技術學院 數位多媒體系
+        </h2>
+
+        <!-- 一句話介紹 -->
+        <div class="mb-6 relative">
+            <i class="fa-solid fa-quote-left text-pink-200 text-3xl absolute -top-2 -left-2 -z-10"></i>
+            <p class="text-slate-700 font-medium leading-relaxed px-2 text-sm sm:text-base">
+                喜歡簡單生活，也喜歡認真對待每一件事。
+            </p>
+        </div>
+
+        <!-- 技能與興趣標籤 -->
+        <div class="flex flex-wrap justify-center gap-2 mb-8">
+            <span class="px-4 py-1.5 bg-gradient-to-r from-blue-400 to-blue-500 text-white text-xs font-bold rounded-full shadow-sm">
+                <i class="fa-solid fa-headphones-simple mr-1"></i>聽音樂
+            </span>
+            <span class="px-4 py-1.5 bg-gradient-to-r from-emerald-400 to-emerald-500 text-white text-xs font-bold rounded-full shadow-sm">
+                <i class="fa-solid fa-book mr-1"></i>看書
+            </span>
+            <span class="px-4 py-1.5 bg-gradient-to-r from-orange-400 to-orange-500 text-white text-xs font-bold rounded-full shadow-sm">
+                <i class="fa-solid fa-pen-nib mr-1"></i>寫小說
+            </span>
+        </div>
+
+        <!-- 聯絡方式 Icons -->
+        <div class="flex justify-center items-center gap-5 pt-4 border-t border-slate-200/50">
+            <!-- Email -->
+            <a href="mailto:bd1151006@venus.lit.edu.tw" title="發送 Email" class="w-12 h-12 flex items-center justify-center rounded-full bg-white text-slate-600 hover:bg-pink-500 hover:text-white shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                <i class="fa-regular fa-envelope text-xl"></i>
+            </a>
+            
+            <!-- Line -->
+            <div title="Line ID: punch_woimae" class="w-12 h-12 flex items-center justify-center rounded-full bg-white text-slate-600 hover:bg-[#06C755] hover:text-white shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-help relative group">
+                <i class="fa-brands fa-line text-xl"></i>
+                <!-- Tooltip -->
+                <div class="absolute -bottom-8 opacity-0 group-hover:opacity-100 transition-opacity bg-slate-800 text-white text-xs py-1 px-2 rounded whitespace-nowrap pointer-events-none">
+                    punch_woimae
+                </div>
+            </div>
+
+            <!-- Instagram -->
+            <a href="https://instagram.com/ssaithann" target="_blank" title="Instagram: @ssaithann" class="w-12 h-12 flex items-center justify-center rounded-full bg-white text-slate-600 hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-pink-500 hover:to-purple-500 hover:text-white shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                <i class="fa-brands fa-instagram text-xl"></i>
+            </a>
+        </div>
+        
+    </div>
+
+</body>
+</html>
